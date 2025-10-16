@@ -1,0 +1,200 @@
+import { TraderType } from '@/types';
+
+export const traderTypes: Record<string, TraderType> = {
+  scalper: {
+    id: 'scalper',
+    name: 'The Precision Scalper',
+    tagline: 'Lightning-fast decision maker who thrives on small, consistent profits',
+    description:
+      'You are a master of quick execution, thriving in the fast-paced world of scalping. Your ability to make rapid decisions and capitalize on small price movements sets you apart. You excel in volatile markets where opportunities emerge and disappear in seconds.',
+    characteristics: [
+      'Extremely focused and disciplined',
+      'Comfortable with rapid decision-making',
+      'Prefers lower timeframes (1m, 5m, 15m)',
+      'High trade frequency (20+ trades per day)',
+      'Low profit per trade, high volume',
+    ],
+    strengths: [
+      'Quick to identify and execute opportunities',
+      'Excellent risk management on individual trades',
+      'Thrives in volatile markets',
+      'Maintains tight stop losses',
+    ],
+    weaknesses: [
+      'May struggle with larger position holding',
+      'Can be prone to overtrading',
+      'Requires intense screen time and focus',
+      'Higher transaction costs due to frequency',
+    ],
+    icon: 'Zap',
+    color: '#F59E0B',
+  },
+  swingTrader: {
+    id: 'swingTrader',
+    name: 'The Strategic Swing Trader',
+    tagline: 'Patient analyst who captures multi-day price movements',
+    description:
+      'You are a patient and strategic trader who excels at identifying and capturing larger market moves over days or weeks. Your analytical approach and ability to hold positions through short-term noise makes you a consistent performer in trending markets.',
+    characteristics: [
+      'Strong analytical skills',
+      'Comfortable holding positions overnight/weekend',
+      'Prefers higher timeframes (4H, Daily)',
+      'Moderate trade frequency (2-10 trades per week)',
+      'Larger profit targets per trade',
+    ],
+    strengths: [
+      'Excellent at identifying trends and major market moves',
+      'Patient with positions during temporary pullbacks',
+      'Good at avoiding overtrading',
+      'Lower stress from constant monitoring',
+    ],
+    weaknesses: [
+      'May miss short-term opportunities',
+      'Requires strong emotional discipline during drawdowns',
+      'Needs patience to wait for ideal setups',
+      'Exposed to overnight/weekend risk',
+    ],
+    icon: 'TrendingUp',
+    color: '#10B981',
+  },
+  riskManager: {
+    id: 'riskManager',
+    name: 'The Disciplined Risk Manager',
+    tagline: 'Safety-first trader who prioritizes capital preservation',
+    description:
+      'You are the epitome of discipline and risk management. Your conservative approach ensures long-term survival in the markets. While others chase big wins, you focus on protecting your capital and building wealth steadily over time.',
+    characteristics: [
+      'Conservative position sizing (0.5-1% risk per trade)',
+      'Heavy emphasis on stop losses and risk/reward ratios',
+      'Methodical trade planning and journaling',
+      'Lower trade frequency (3-8 trades per week)',
+      'Steady, consistent returns',
+    ],
+    strengths: [
+      'Excellent at protecting capital from large losses',
+      'Low drawdown risk with conservative approach',
+      'Emotionally stable during market turbulence',
+      'Consistent long-term performance',
+    ],
+    weaknesses: [
+      'May take longer to hit aggressive profit targets',
+      'Can miss opportunities due to over-caution',
+      'May struggle with challenges requiring faster growth',
+      'Potentially lower returns in trending markets',
+    ],
+    icon: 'Shield',
+    color: '#3B82F6',
+  },
+  aggressiveGrowth: {
+    id: 'aggressiveGrowth',
+    name: 'The Aggressive Growth Trader',
+    tagline: 'Bold trader willing to take calculated risks for substantial returns',
+    description:
+      'You are confident, ambitious, and not afraid to take calculated risks. Your aggressive position sizing and focus on high-reward setups means you can hit profit targets quickly, but you need the discipline to manage the increased volatility that comes with your style.',
+    characteristics: [
+      'Higher position sizing (2-5% risk per trade)',
+      'Focuses on high reward/risk setups (3:1, 5:1)',
+      'Comfortable with volatility',
+      'Moderate trade frequency (5-15 trades per week)',
+      'Targets large percentage gains',
+    ],
+    strengths: [
+      'Can hit profit targets quickly',
+      'Confident in high-conviction setups',
+      'Thrives during trending markets',
+      'Excellent at capitalizing on major moves',
+    ],
+    weaknesses: [
+      'Higher risk of hitting daily loss limits',
+      'Requires strong emotional control during drawdowns',
+      'May struggle with discipline in choppy markets',
+      'Account can experience significant volatility',
+    ],
+    icon: 'Rocket',
+    color: '#EF4444',
+  },
+  technicalPurist: {
+    id: 'technicalPurist',
+    name: 'The Technical Purist',
+    tagline: 'Chart-focused trader guided by indicators and price action',
+    description:
+      'You are a systematic trader who makes decisions based purely on technical analysis. Your deep knowledge of indicators, patterns, and price action allows you to trade with confidence, independent of news or market sentiment. You trust your charts above all else.',
+    characteristics: [
+      'Deep knowledge of technical analysis',
+      'Uses multiple indicators and timeframes',
+      'Ignores fundamental news',
+      'Moderate to high trade frequency',
+      'Pattern recognition specialist',
+    ],
+    strengths: [
+      'Systematic and rules-based approach',
+      'Unaffected by news-driven emotion',
+      'Strong pattern recognition skills',
+      'Consistent methodology across markets',
+    ],
+    weaknesses: [
+      'May ignore important fundamental catalysts',
+      'Can over-analyze (paralysis by analysis)',
+      'Multiple indicators may give conflicting signals',
+      'May miss major news-driven moves',
+    ],
+    icon: 'LineChart',
+    color: '#8B5CF6',
+  },
+  newsTrader: {
+    id: 'newsTrader',
+    name: 'The News & Fundamental Trader',
+    tagline: 'Event-driven trader who capitalizes on economic releases',
+    description:
+      'You are an event-driven trader who thrives on the volatility and opportunities created by economic releases and breaking news. Your deep understanding of fundamentals and quick reaction time allows you to capitalize on major market-moving events.',
+    characteristics: [
+      'Strong fundamental analysis skills',
+      'Trades around economic calendar',
+      'Comfortable with high volatility',
+      'Variable trade frequency (event-dependent)',
+      'Quick reaction to breaking news',
+    ],
+    strengths: [
+      'Excellent at capitalizing on major moves',
+      'Strong understanding of market drivers',
+      'Can achieve large profits quickly during events',
+      'Prepared for and expecting volatility',
+    ],
+    weaknesses: [
+      'Higher risk during unpredictable news events',
+      'May have periods of inactivity between events',
+      'Requires constant news monitoring',
+      'Vulnerable to unexpected outcomes',
+    ],
+    icon: 'Newspaper',
+    color: '#EC4899',
+  },
+  balancedOpportunist: {
+    id: 'balancedOpportunist',
+    name: 'The Balanced Opportunist',
+    tagline: 'Flexible trader who adapts to market conditions',
+    description:
+      'You are a versatile trader who doesn\'t limit yourself to one style or approach. Your ability to adapt your strategy based on market conditions makes you resilient across different market environments. You combine the best of multiple trading approaches.',
+    characteristics: [
+      'Trades multiple styles (scalping, swing, day trading)',
+      'Adapts to market volatility',
+      'Uses both technical and fundamental analysis',
+      'Variable trade frequency',
+      'Opportunistic approach',
+    ],
+    strengths: [
+      'Highly adaptable to changing market conditions',
+      'Can profit in various market environments',
+      'Well-rounded skill set',
+      'Flexible approach reduces missed opportunities',
+    ],
+    weaknesses: [
+      'May lack specialization in one approach',
+      'Can be inconsistent without clear strategy',
+      'Risk of spreading focus too thin',
+      'May struggle to develop deep expertise',
+    ],
+    icon: 'Target',
+    color: '#06B6D4',
+  },
+};
