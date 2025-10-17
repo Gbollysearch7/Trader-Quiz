@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { QuestionCard } from './QuestionCard';
 import { ProgressBar } from './ProgressBar';
@@ -43,13 +44,26 @@ export function QuizContainer() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
-      {/* Background Effects */}
-      <div className="absolute inset-0 gradient-primary opacity-5" />
-      <div className="absolute top-40 right-40 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-40 left-40 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 bg-black">
 
-      <div className="relative z-10 w-full max-w-4xl space-y-8">
+      <div className="relative z-10 w-full max-w-4xl space-y-6 sm:space-y-8">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center mb-4"
+        >
+          <Image
+            src="/logos/tradersyard-logo-2.svg"
+            alt="Tradersyard Logo"
+            width={446}
+            height={82}
+            className="h-8 sm:h-10 md:h-12 w-auto"
+            priority
+          />
+        </motion.div>
+
         {/* Progress Bar */}
         <ProgressBar
           current={currentQuestionIndex + 1}
@@ -73,27 +87,27 @@ export function QuizContainer() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="flex items-center justify-between max-w-3xl mx-auto"
+          className="flex items-center justify-between gap-3 max-w-3xl mx-auto"
         >
           <Button
             variant="outline"
             size="lg"
             onClick={handleBack}
             disabled={isFirstQuestion}
-            className="group"
+            className="group min-h-[48px] text-sm sm:text-base px-4 sm:px-6"
           >
-            <ChevronLeft className="w-5 h-5 mr-2 transition-transform group-hover:-translate-x-1" />
-            Back
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 transition-transform group-hover:-translate-x-1" />
+            <span className="hidden xs:inline">Back</span>
           </Button>
 
           <Button
             size="lg"
             onClick={handleNext}
             disabled={!hasAnswered}
-            className="gradient-primary group"
+            className="bg-[#5865F2] hover:bg-[#4752C4] text-white group min-h-[48px] text-sm sm:text-base px-4 sm:px-6"
           >
             {isLastQuestion ? 'See Results' : 'Next'}
-            <ChevronRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
         </motion.div>
 
@@ -103,7 +117,7 @@ export function QuizContainer() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-center text-sm text-muted-foreground"
+            className="text-center text-xs sm:text-sm text-muted-foreground"
           >
             Select an answer to continue
           </motion.p>

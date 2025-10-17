@@ -78,7 +78,7 @@ export function TraderTypeReveal({ traderType }: TraderTypeRevealProps) {
           }}
         />
 
-        <CardContent className="relative z-10 p-8 md:p-12 text-center space-y-6">
+        <CardContent className="relative z-10 p-6 sm:p-8 md:p-12 text-center space-y-4 sm:space-y-6">
           {/* Icon */}
           <motion.div
             initial={{ scale: 0 }}
@@ -87,12 +87,10 @@ export function TraderTypeReveal({ traderType }: TraderTypeRevealProps) {
             className="flex justify-center"
           >
             <div
-              className="w-24 h-24 rounded-full flex items-center justify-center shadow-lg"
-              style={{ backgroundColor: `${traderType.color}22` }}
+              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#5865F2] flex items-center justify-center shadow-lg"
             >
               <IconComponent
-                className="w-12 h-12"
-                style={{ color: traderType.color }}
+                className="w-10 h-10 sm:w-12 sm:h-12 text-white"
               />
             </div>
           </motion.div>
@@ -104,7 +102,7 @@ export function TraderTypeReveal({ traderType }: TraderTypeRevealProps) {
             transition={{ delay: 0.3 }}
           >
             <Badge
-              className="px-4 py-2 text-sm font-semibold"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold"
               style={{
                 backgroundColor: `${traderType.color}22`,
                 color: traderType.color,
@@ -122,8 +120,8 @@ export function TraderTypeReveal({ traderType }: TraderTypeRevealProps) {
             transition={{ delay: 0.4 }}
             className="space-y-2"
           >
-            <h1 className="text-4xl md:text-5xl font-bold">{traderType.name}</h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">{traderType.name}</h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium">
               {traderType.tagline}
             </p>
           </motion.div>
@@ -133,7 +131,7 @@ export function TraderTypeReveal({ traderType }: TraderTypeRevealProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed px-2"
           >
             {traderType.description}
           </motion.p>

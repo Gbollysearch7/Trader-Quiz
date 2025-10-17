@@ -28,12 +28,12 @@ export function Header() {
             Take Quiz
           </Link>
           <a
-            href="https://tradersyard.com"
+            href="https://tradersyard.com/#pricing"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
           >
-            Visit Tradersyard
+            View Pricing
           </a>
         </nav>
       </div>

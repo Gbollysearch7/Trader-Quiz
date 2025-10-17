@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 import { TraderType } from '@/types';
 import { CheckCircle2, AlertCircle, Lightbulb } from 'lucide-react';
 
@@ -17,21 +16,21 @@ export function PersonalityProfile({
   tips,
 }: PersonalityProfileProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
       {/* Characteristics */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
       >
-        <Card className="h-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Lightbulb className="w-5 h-5 text-primary" />
+        <Card className="h-full bg-[#5865F2] border-[#5865F2]">
+          <CardHeader className="p-4 sm:p-6 pb-3">
+            <CardTitle className="flex items-center gap-2 text-white font-semibold text-lg sm:text-xl" style={{ fontFamily: '"Clash Display", "Clash Display Fallback: Arial", sans-serif', fontWeight: 600 }}>
+              <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
               Key Characteristics
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3">
+          <CardContent className="space-y-3 px-4 sm:px-6 pb-4 sm:pb-6 pt-1">
             {traderType.characteristics.map((characteristic, index) => (
               <motion.div
                 key={index}
@@ -42,11 +41,11 @@ export function PersonalityProfile({
               >
                 <Badge
                   variant="outline"
-                  className="mt-0.5 px-2 py-1 text-xs font-semibold"
+                  className="mt-0.5 px-2 py-1 text-xs font-semibold bg-white/10 text-white border-white/20"
                 >
                   {index + 1}
                 </Badge>
-                <p className="text-sm text-foreground/80 leading-relaxed">
+                <p className="text-sm sm:text-base text-white leading-relaxed font-bold" style={{ fontFamily: 'Inter, "Inter Fallback: Arial", sans-serif', fontWeight: 700 }}>
                   {characteristic}
                 </p>
               </motion.div>
@@ -56,21 +55,21 @@ export function PersonalityProfile({
       </motion.div>
 
       {/* Strengths & Weaknesses */}
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {/* Strengths */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
         >
-          <Card className="border-green-500/20 bg-green-500/5">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-green-700 dark:text-green-400">
-                <CheckCircle2 className="w-5 h-5" />
+          <Card className="bg-[#5865F2] border-[#5865F2]">
+            <CardHeader className="p-4 sm:p-6 pb-3">
+              <CardTitle className="flex items-center gap-2 text-white font-semibold text-lg sm:text-xl" style={{ fontFamily: '"Clash Display", "Clash Display Fallback: Arial", sans-serif', fontWeight: 600 }}>
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
                 Your Strengths
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2">
+            <CardContent className="space-y-2 px-4 sm:px-6 pb-4 sm:pb-6 pt-1">
               {traderType.strengths.map((strength, index) => (
                 <motion.div
                   key={index}
@@ -79,8 +78,8 @@ export function PersonalityProfile({
                   transition={{ delay: 0.8 + index * 0.1 }}
                   className="flex items-start gap-2"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-foreground/80">{strength}</p>
+                  <CheckCircle2 className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
+                  <p className="text-sm sm:text-base text-white font-bold" style={{ fontFamily: 'Inter, "Inter Fallback: Arial", sans-serif', fontWeight: 700 }}>{strength}</p>
                 </motion.div>
               ))}
             </CardContent>
@@ -93,14 +92,14 @@ export function PersonalityProfile({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          <Card className="border-amber-500/20 bg-amber-500/5">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-amber-700 dark:text-amber-400">
-                <AlertCircle className="w-5 h-5" />
+          <Card className="bg-[#5865F2] border-[#5865F2]">
+            <CardHeader className="p-4 sm:p-6 pb-3">
+              <CardTitle className="flex items-center gap-2 text-white font-semibold text-lg sm:text-xl" style={{ fontFamily: '"Clash Display", "Clash Display Fallback: Arial", sans-serif', fontWeight: 600 }}>
+                <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
                 Areas to Watch
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2">
+            <CardContent className="space-y-2 px-4 sm:px-6 pb-4 sm:pb-6 pt-1">
               {traderType.weaknesses.map((weakness, index) => (
                 <motion.div
                   key={index}
@@ -109,8 +108,8 @@ export function PersonalityProfile({
                   transition={{ delay: 0.9 + index * 0.1 }}
                   className="flex items-start gap-2"
                 >
-                  <AlertCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-foreground/80">{weakness}</p>
+                  <AlertCircle className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
+                  <p className="text-sm sm:text-base text-white font-bold" style={{ fontFamily: 'Inter, "Inter Fallback: Arial", sans-serif', fontWeight: 700 }}>{weakness}</p>
                 </motion.div>
               ))}
             </CardContent>
@@ -125,29 +124,29 @@ export function PersonalityProfile({
         transition={{ delay: 0.9 }}
         className="lg:col-span-2"
       >
-        <Card className="border-primary/20 bg-primary/5">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-primary">
-              <Lightbulb className="w-5 h-5" />
+        <Card className="bg-white border-gray-200">
+          <CardHeader className="p-4 sm:p-6 pb-3">
+            <CardTitle className="flex items-center gap-2 text-black font-semibold text-lg sm:text-xl" style={{ fontFamily: '"Clash Display", "Clash Display Fallback: Arial", sans-serif', fontWeight: 600 }}>
+              <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-[#5865F2] shrink-0" />
               Personalized Trading Tips
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <CardContent className="px-4 sm:px-6 pb-4 sm:pb-6 pt-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
               {tips.map((tip, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.0 + index * 0.1 }}
-                  className="flex items-start gap-3 p-3 rounded-lg bg-card border border-border"
+                  className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 rounded-lg bg-gray-50 border border-gray-200"
                 >
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-xs font-bold text-primary">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#5865F2] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-xs font-bold text-white">
                       {index + 1}
                     </span>
                   </div>
-                  <p className="text-sm text-foreground/80 leading-relaxed">
+                  <p className="text-sm sm:text-base text-black leading-relaxed font-normal" style={{ fontFamily: 'Inter, "Inter Fallback: Arial", sans-serif', fontWeight: 400 }}>
                     {tip}
                   </p>
                 </motion.div>

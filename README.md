@@ -2,6 +2,8 @@
 
 A modern, interactive quiz application that helps traders discover their unique trading personality and matches them with the perfect Tradersyard evaluation challenge.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/trader-quiz)
+
 ![Tradersyard Quiz](https://img.shields.io/badge/Next.js-14+-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3+-38B2AC?style=for-the-badge&logo=tailwind-css)

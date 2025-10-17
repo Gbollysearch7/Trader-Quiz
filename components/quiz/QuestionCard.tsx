@@ -31,21 +31,21 @@ export function QuestionCard({
       className="w-full"
     >
       <Card className="w-full max-w-3xl mx-auto gradient-card border-2 shadow-xl">
-        <CardHeader className="space-y-4">
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-muted-foreground">
+        <CardHeader className="space-y-3 sm:space-y-4 p-4 sm:p-6">
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
               Question {questionNumber} of {totalQuestions}
             </span>
-            <span className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary capitalize">
+            <span className="text-xs font-medium px-2 sm:px-3 py-1 rounded-full bg-primary/10 text-primary capitalize shrink-0">
               {question.category}
             </span>
           </div>
-          <CardTitle className="text-2xl md:text-3xl font-bold leading-tight">
+          <CardTitle className="text-xl sm:text-2xl md:text-3xl font-bold leading-tight">
             {question.question}
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6">
           <RadioGroup
             value={selectedAnswer}
             onValueChange={onAnswerSelect}
@@ -60,7 +60,7 @@ export function QuestionCard({
               >
                 <Label
                   htmlFor={option.id}
-                  className={`flex items-start p-4 rounded-lg border-2 cursor-pointer transition-all hover:border-primary/50 hover:bg-primary/5 ${
+                  className={`flex items-start p-3 sm:p-4 rounded-lg border-2 cursor-pointer transition-all hover:border-primary/50 hover:bg-primary/5 min-h-[56px] ${
                     selectedAnswer === option.id
                       ? 'border-primary bg-primary/10 shadow-md'
                       : 'border-border bg-card'
@@ -69,9 +69,9 @@ export function QuestionCard({
                   <RadioGroupItem
                     value={option.id}
                     id={option.id}
-                    className="mt-0.5 mr-3"
+                    className="mt-0.5 mr-2 sm:mr-3 shrink-0"
                   />
-                  <span className="flex-1 text-base leading-relaxed">
+                  <span className="flex-1 text-sm sm:text-base leading-relaxed">
                     {option.text}
                   </span>
                 </Label>

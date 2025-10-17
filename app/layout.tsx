@@ -25,11 +25,29 @@ export const metadata: Metadata = {
     "trading evaluation",
     "trader type",
   ],
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: "Discover Your Trader Personality | Tradersyard",
     description:
       "Find out your trading personality type and get matched with the perfect evaluation challenge.",
     type: "website",
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Tradersyard Trader Quiz',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Discover Your Trader Personality | Tradersyard",
+    description: "Find out your trading personality type and get matched with the perfect evaluation challenge.",
+    images: ['/og-image.png'],
   },
 };
 
